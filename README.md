@@ -17,6 +17,14 @@
 
 	$ ./configure.sh
 
+* NAT traversal を使用します。
+* ike,esp の 暗号化の種類は 3des-sha1-modp1024 が設定してあります。これらはike-scanで調査することができます。
+
+ike-scan の利用例
+
+		$ sudo apt install ike-scan
+		$ sudo systemctl stop strongswan
+		$ sudo ike-scan [VPNサーバのIPアドレス]
 
 ### 接続
 
@@ -43,6 +51,6 @@
 
 # 備考
 
-sudo ipsec status の実行結果がESTABLISHEDになるのにINSTALLEDにならない場合。
+sudo ipsec status の実行結果がESTABLISHEDになるのにINSTALLEDにならない場合、
 クライアントのIPアドレスを変えれば直ることがあります。
 
