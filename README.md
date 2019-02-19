@@ -49,6 +49,22 @@ ike-scan の利用例
 
 	$ ./check-ip.sh
 
+# 活用例
+
+## FirefoxからのみVPN経由にしたい
+
+デフォルトルートがVPN先のVPN Clientサーバを構成し、
+ローカルからそのサーバにssh Socks Proxyで接続することで、
+ローカルのFirefoxからその経路でブラウズすることができます。
+
+	[ローカル]$ ssh -D 10080 [VPN Clinetサーバのユーザ]@[VPN Clinetサーバのアドレス]
+
+	Firefox → 環境設定 → ネットワーク設定 → 接続設定 → 手動でプロクシを設定する
+	→ SOCKSホスト localhost ポート 10080
+	→ SOCKS5を選択
+
+[Proxy SwitcyOmega](https://addons.mozilla.org/ja/firefox/addon/switchyomega/) などを使うと便利です。
+
 # 備考
 
 sudo ipsec status の実行結果がESTABLISHEDになるのにINSTALLEDにならない場合、
