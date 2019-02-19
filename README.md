@@ -1,6 +1,6 @@
 # Debian9 で L2TP over IPSec VPN Clientを利用する
 
-* GCEのDebian9にて動作確認
+* GCEおよびVMware Player上の Debian9 にて動作確認
 * サーバは L2TP over IPsec VPN で、IKEv1 PSKを使用
 * ローカルネットワーク以外の通信をVPN経由にするルーティング設定
 
@@ -33,7 +33,7 @@
 * 現在接続中のSSHクライアントへの経路は既存のものが追加されます。
 * GCEのメタデータサーバの経路はeth0が設定されます。
 
-### 元のルーティングに戻す
+### 元の経路に戻す
 
 	$ ./route-restore.sh
 
@@ -41,4 +41,8 @@
 
 	$ ./check-ip.sh
 
+# 備考
+
+sudo ipsec status の実行結果がESTABLISHEDになるのにINSTALLEDにならない場合。
+クライアントのIPアドレスを変えれば直ることがあります。
 
