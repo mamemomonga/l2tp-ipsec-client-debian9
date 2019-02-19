@@ -1,0 +1,19 @@
+# VPNの名前
+IL_NAME="ILC-example"
+
+# VPNサーバ IPアドレス
+IL_RIGHT="203.0.113.12"
+
+# IPsec 事前共有鍵
+IL_PSK="ThisIsSuperSecretKey!"
+
+# L2TP ユーザ・パスワード
+IL_USER="TheUserName"
+IL_PASS="ThePassword"
+
+# VPNのゲートウェイ
+IL_PEER_GW="192.0.2.1"
+
+# VPNのネットワーク
+IL_PEER_NETWORK="192.0.2.0/24"
+
